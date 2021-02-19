@@ -20,14 +20,14 @@ const Posts = () => {
           const { id, title, body } = post;
           return (
             <div key={id}>
-              <div style={{backgroundColor:'#E1E879', margin:'4px 20px'}}>
+              <div style={{backgroundColor:'#79A9E8', margin:'4px 20px'}}>
                 <h2>{title}</h2>
               </div>
               <div style={{textAlign: 'left', padding:'4px 20px'}}>
                 <p>{body}</p>
               </div>
             </div>
-          );
+          ); 
         })}
     </div>
   );

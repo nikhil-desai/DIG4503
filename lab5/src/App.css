@@ -1,7 +1,9 @@
 .App {
   text-align: center;
-  background-color: green;
-  width: 640px;
-  height: 860px;
-  justify-content: center;
+  background-color: #7e77e7;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 25%;
+  overflow-y: scroll;
 }

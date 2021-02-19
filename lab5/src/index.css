@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #7e7;
+  scrollbar-width: thin;          /* "auto" or "thin" */
+  scrollbar-color: #7e7 #7e77e7;   /* scroll thumb and track */
 }
 
 code {

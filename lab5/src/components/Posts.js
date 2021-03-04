@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Post from "../components/Post";
+import GoToButton from "../components/GoToButton";
 
 const Posts = () => {
   // setting the state vars
@@ -20,6 +21,7 @@ const Posts = () => {
       <div style={{ display: "flex", alignItems: "baseline" }}>
         {posts && posts.map((post, id) => <Post {...post} key={id} />)}
       </div>
+      <GoToButton />
     </div>
   );
 };

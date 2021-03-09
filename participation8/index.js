@@ -11,7 +11,7 @@ App.get("/", function (request, response) {
 App.get("/favorite/:candy", function (request, response) {
   response.send("Your favorite candy is: " + request.params.candy);
 });
-// Names Route
+// Least Favorite Candy Route
 App.get("/leastfavorite/:candy", function (request, response) {
   response.send("Your least favorite candy is: " + request.params.candy);
 });

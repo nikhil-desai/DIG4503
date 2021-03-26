@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Participation Activity 10</title>
+    <meta name="description" content="Class Participation Activity" />
+    <meta name="author" content="Nikhil Desai" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <script>
+      function readName(event) {
+        event.preventDefault();
+        // Getting Name
+        let element = document.querySelector("#name");
+        fetch("/employees/" + element.value)
+          .then((res) => {
+            return res.json();
+          })
+          // Posting Age
+          .then((processed) => {
+            let reporting = document.querySelector("#reportingArea");
+
+            if (processed.error) {
+              reporting.innerHTML = processed.error;
+            } else {
+              reporting.innerHTML = processed.age;
+            }
+          });
+      }
+      function readAge(event) {
+        event.preventDefault();
+        // Getting Age
+        let element = document.querySelector("#age");
+        fetch("/ages/" + element.value)
+          .then((res) => {
+            return res.json();
+          })
+          // Posting Name
+          .then((processed) => {
+            let reporting = document.querySelector("#reportingArea");
+
+            if (processed.error) {
+              reporting.innerHTML = processed.error;
+            } else {
+              reporting.innerHTML = processed.name;
+            }
+          });
+      }
+
+      function createEmployee(event) {
+        event.preventDefault();
+        // Defining Employee
+        let name = document.querySelector("#empName");
+        let age = document.querySelector("#empAge");
+        // Sending employee Route
+        fetch("/employee/" + name.value + "/" + age.value, {
+          method: "post"
+        }).then((res) => {
+            return res.json();
+        }).then((processed) => {
+            console.log(processed);
+        });
+      }
+    </script>
+    <h1>Find Employee</h1>
+    <h2>Name</h2>
+    <form onsubmit="readName(event)">
+      <input id="name" type="text" />
+      <button>Submit</button>
+    </form>
+    <h2>Age</h2>
+    <form onsubmit="readAge(event)">
+      <input id="age" type="text" />
+      <button>Submit</button>
+    </form>
+    <hr />
+    <h1>Create Employee</h1>
+    <form onSubmit="createEmployee(event)">
+      <input id="empName" type="text" />
+      <input id="empAge" type="text" />
+      <button>Submit</button>
+    </form>
+    <hr />
+    <h2>Reporting</h2>
+    <div id="reportingArea"></div>
+  </body>
+</html>

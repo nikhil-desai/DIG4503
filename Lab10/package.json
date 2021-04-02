@@ -1,7 +1,7 @@
 {
   "name": "lab10",
   "version": "1.0.0",
-  "description": "",
+  "description": "Express + React",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
     "server": "nodemon index.js",
     "start": "concurrently 'npm:build' 'npm:server'"
   },
-  "author": "",
+  "author": "Nikhil Desai",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^6.0.0",

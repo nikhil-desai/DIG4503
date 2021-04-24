@@ -25,7 +25,7 @@ class AgeSearch extends React.Component {
     return (
       <div>
         <h2>Age</h2>
-        <form onsubmit={this.readAge}>
+        <form onSubmit={this.readAge}>
           <input id="age" type="text" />
           <button>Submit</button>
         </form>
